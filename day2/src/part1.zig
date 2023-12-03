@@ -35,7 +35,6 @@ fn isValid(game: []u8, gameConfig: GameConfig) bool {
                 if (i + color.name.len < game.len and std.mem.eql(u8, game[i .. i + color.name.len], color.name)) {
                     skips = @as(u8, @intCast(color.name.len)) - 1;
                     const colorValue: u8 = @as(color.type, @field(gameConfig, color.name));
-                    std.debug.print("{d}\n", .{colorValue});
                     if (currentNumber > colorValue) {
                         return false;
                     }
